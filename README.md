@@ -4,7 +4,7 @@ This code is written to launch a ros node with the urdf robot description as a p
 Steps: 
 
 1. Create a ros2 workspace with the src code inside
-2. Run the following: 
+2. Run the following in the workspace: 
 
 ```
 colcon build --symlink-install --packages-select omni 

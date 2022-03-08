@@ -10,7 +10,7 @@ Steps:
 colcon build --symlink-install --packages-select omni 
 source install/setup.bash
 ros2 launch omni demo.launch.py # To launch the ros node and parameters
-rviz2 -d ~/SlicerRos2Py_ws/install/omni/share/omni/omni.rviz # to launch rviz with the omni frames
+rviz2 -d ~/<workspace_name>/install/omni/share/omni/omni.rviz # to launch rviz with the omni frames
 
 ```
 

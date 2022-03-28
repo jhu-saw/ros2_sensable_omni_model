@@ -10,7 +10,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
     urdf_file_name = 'omni.urdf'
     urdf = os.path.join(
-        get_package_share_directory('omni'),
+        get_package_share_directory('sensable_omni_urdf'),
         urdf_file_name)
     with open(urdf, 'r') as infp:
         robot_desc = infp.read()
@@ -28,8 +28,8 @@ def generate_launch_description():
             parameters=[{'use_sim_time': use_sim_time, 'robot_description': robot_desc}],
             arguments=[urdf]),
         Node(
-            package='omni',
-            executable='state_publisher',
-            name='state_publisher',
+            package='sensable_omni_urdf',
+            executable='joint_state_publisher',
+            name='joint_state_publisher',
             output='screen'),
     ])

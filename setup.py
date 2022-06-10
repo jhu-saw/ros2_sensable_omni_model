@@ -3,7 +3,7 @@ from glob import glob
 from setuptools import setup
 from setuptools import find_packages
 
-package_name = 'sensable_omni_urdf'
+package_name = 'sensable_omni_model'
 
 setup(
     name=package_name,
@@ -14,16 +14,17 @@ setup(
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name), glob('launch/*.py')),
         (os.path.join('share', package_name), glob('urdf/*')),
+        (os.path.join('share', package_name), glob('rviz/*')),
         (os.path.join('share', package_name, 'meshes'), glob('meshes/*.stl')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='Laura Connolly',
-    maintainer_email='15lpc1@queensu.ca',
+    maintainer='Anton Deguet',
+    maintainer_email='anton.deguet@jhu/edu',
     description='URDF and STL files for Sensable Omni',
     license='MIT',
     entry_points={
-        'console_scripts': [ 'joint_state_publisher = sensable_omni_urdf.joint_state_publisher:main'
+        'console_scripts': [ 'pretend_omni_joint_state_publisher = sensable_omni_model.pretend_omni_joint_state_publisher:main'
         ],
     },
 )
